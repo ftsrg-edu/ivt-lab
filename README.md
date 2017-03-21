@@ -6,7 +6,7 @@ This is a sample application for the [Integration and Verification Techniques](h
 
 - The project is implemented in Java 8.
 - The project can be built using [Maven](https://maven.apache.org/).
-- [Junit](http://junit.org/junit4/) is used for tests, and [Mockito](http://site.mockito.org/) for isolating dependencies.
+- [JUnit](http://junit.org/junit4/) is used for tests, and [Mockito](http://site.mockito.org/) for isolating dependencies.
 
 Clone the repository and execute Maven to build the application:
 
@@ -31,6 +31,6 @@ The project represents an alpha version of a spaceship.
 - The ship (`SpaceShip` interface) can fire one or more lasers or torpedos.
 - We have only one spaceship as of now (`GT4500`).
 - Currently two firing modes (`FiringMode`) are supported: firing only one or all instances of a given weapon type.
-- Lasers are not yet implemented, the code for torpedo stores are ready (`TorpedoStore`).
+- Lasers are not yet implemented, but the code for torpedo stores are ready (`TorpedoStore`).
 - For the GT4500 ship the rules for firing torpedoes can be found in the Javadoc comment of method `fireTorpedos`. They are already partially implemented.
 - There are currently two tests (`GT4500Test`), but be aware that they are not proper unit tests, as they do not isolate the dependencies of the tested class.
