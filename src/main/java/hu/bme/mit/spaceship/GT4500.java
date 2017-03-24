@@ -79,11 +79,12 @@ public class GT4500 implements SpaceShip {
       case ALL:
         // try to fire both of the torpedos
         //TODO implement feature
-    	boolean firingSuccess2 = false;
+    	boolean firingSuccessPrimary = false;
+    	boolean firingSuccessSecondary = false;
 
-        firingSuccess = secondaryTorpedoStore.fire(1);
-        firingSuccess2 = secondaryTorpedoStore.fire(1);
-	firingSuccess = firingSuccess && firingSuccess2;
+      firingSuccessPrimary = primaryTorpedoStore.fire(1);
+      firingSuccessSecondary = secondaryTorpedoStore.fire(1);
+	    firingSuccess = firingSuccessPrimary && firingSuccessSecondary;
 
         break;
     }
