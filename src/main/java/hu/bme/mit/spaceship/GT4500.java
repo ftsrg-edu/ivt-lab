@@ -81,6 +81,9 @@ public class GT4500 implements SpaceShip {
         //TODO implement feature
 
         break;
+      default:
+        //DEF
+        break;
     }
 
     return firingSuccess;
