@@ -22,3 +22,5 @@ public interface SpaceShip {
   */
   public boolean fireTorpedos(FiringMode firingMode);
 }
+
+// branch A
