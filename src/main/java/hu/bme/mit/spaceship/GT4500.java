@@ -20,6 +20,27 @@ public class GT4500 implements SpaceShip {
     return false;
   }
 
+
+
+  private boolean shoot() {
+    boolean firingSuccess = false;
+    if (! secondaryTorpedoStore.isEmpty()) {
+      firingSuccess = secondaryTorpedoStore.fire(1);
+      wasPrimaryFiredLast = false;
+    }
+    else {
+      // although primary was fired last time, but the secondary is empty
+      // thus try to fire primary again
+      if (! primaryTorpedoStore.isEmpty()) {
+        firingSuccess = primaryTorpedoStore.fire(1);
+        wasPrimaryFiredLast = true;
+      }
+
+      // if both of the stores are empty, nothing can be done, return failure
+    }
+    return firingSuccess;
+  }
+
   /**
   * Tries to fire the torpedo stores of the ship.
   *
@@ -42,20 +63,7 @@ public class GT4500 implements SpaceShip {
       case SINGLE:
         if (wasPrimaryFiredLast) {
           // try to fire the secondary first
-          if (! secondaryTorpedoStore.isEmpty()) {
-            firingSuccess = secondaryTorpedoStore.fire(1);
-            wasPrimaryFiredLast = false;
-          }
-          else {
-            // although primary was fired last time, but the secondary is empty
-            // thus try to fire primary again
-            if (! primaryTorpedoStore.isEmpty()) {
-              firingSuccess = primaryTorpedoStore.fire(1);
-              wasPrimaryFiredLast = true;
-            }
-
-            // if both of the stores are empty, nothing can be done, return failure
-          }
+          firingSuccess = shoot();
         }
         else {
           // try to fire the primary first
@@ -77,8 +85,21 @@ public class GT4500 implements SpaceShip {
         break;
 
       case ALL:
-        // try to fire both of the torpedos
-        //TODO implement feature
+
+          if (! secondaryTorpedoStore.isEmpty()) {
+            firingSuccess = secondaryTorpedoStore.fire(1);
+            wasPrimaryFiredLast = false;
+          }
+          if (! primaryTorpedoStore.isEmpty()) {
+            firingSuccess = primaryTorpedoStore.fire(1);
+            wasPrimaryFiredLast = true;
+          }
+
+
+        break;
+      default:
+        //DEF
+        //changes
 
         break;
     }
