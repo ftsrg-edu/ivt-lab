@@ -1,6 +1,8 @@
 # IVT Spaceship
 
-This is a sample application for the [Integration and Verification Techniques](http://www.mit.bme.hu/oktatas/targyak/vimiac04) course at BME MIT. The application is simplified and deliberately contains bugs.
+This is a sample application for the [Integration and Verification Techniques](http://www.mit.bme.hu/oktatas/targyak/vimiac04) course at BME MIT.
+
+The application is simplified and deliberately contains bugs.
 
 ## Getting started
 
@@ -20,7 +22,7 @@ To compile and run tests also execute:
 mvn test
 ```
 
-(That will be enough to know for the current exercises. If you are more interested, see [this](https://github.com/FTSRG/swsv/wiki/0-Maven) short guide about Maven.)
+(That will be enough to know for the current exercises. If you are more interested, see [this]https://github.com/FTSRG/swsv-labs/wiki/1a-Build-tools) short guide about Maven.)
 
 As this is a really simple project, you can use the command-line build tool and a light-weight IDE like the [Atom](https://atom.io/) editor. Just be sure to enable collapsing directories (_File / Settings / Packages / tree-view / Collapse directories_).
 
