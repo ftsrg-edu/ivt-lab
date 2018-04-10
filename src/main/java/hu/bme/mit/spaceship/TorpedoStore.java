@@ -7,15 +7,15 @@ import java.util.Random;
 */
 public class TorpedoStore {
 
-  private int torpedos = 0;
+  private int torpedoCount = 0;
   private Random generator = new Random();
 
   public TorpedoStore(int numberOfTorpedos){
-    this.torpedos = numberOfTorpedos;
+    this.torpedoCount = numberOfTorpedos;
   }
 
   public boolean fire(int numberOfTorpedos){
-    if(numberOfTorpedos < 1 || numberOfTorpedos > this.torpedos){
+    if(numberOfTorpedos < 1 || numberOfTorpedos > this.torpedoCount){
       throw new IllegalArgumentException("numberOfTorpedos");
     }
 
@@ -26,7 +26,7 @@ public class TorpedoStore {
 
     if (r > 0.01) {
       // successful firing
-      this.torpedos -= numberOfTorpedos;
+      this.torpedoCount -= numberOfTorpedos;
       success = true;
     } else {
       // failure
@@ -37,10 +37,10 @@ public class TorpedoStore {
   }
 
   public boolean isEmpty(){
-    return this.torpedos <= 0;
+    return this.torpedoCount <= 0;
   }
 
-  public int getNumberOfTorpedos() {
-    return this.torpedos;
+  public int getTorpedoCount() {
+    return this.torpedoCount;
   }
 }
