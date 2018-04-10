@@ -1,7 +1,7 @@
 package hu.bme.mit.spaceship;
 
 /**
-* A simple spaceship with two proton torpedos and four lasers
+* A simple spaceship with two proton torpedoes and four lasers
 */
 public class GT4500 implements SpaceShip {
 
@@ -34,7 +34,7 @@ public class GT4500 implements SpaceShip {
   * @return whether at least one torpedo was fired successfully
   */
   @Override
-  public boolean fireTorpedos(FiringMode firingMode) {
+  public boolean fireTorpedoes(FiringMode firingMode) {
 
     boolean firingSuccess = false;
 
@@ -77,7 +77,7 @@ public class GT4500 implements SpaceShip {
         break;
 
       case ALL:
-        // try to fire both of the torpedos
+        // try to fire both of the torpedoes
         //TODO implement feature
 
         break;

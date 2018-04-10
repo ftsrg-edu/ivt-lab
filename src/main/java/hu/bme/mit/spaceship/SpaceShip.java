@@ -15,10 +15,10 @@ public interface SpaceShip {
   public boolean fireLasers(FiringMode firingMode);
 
   /**
-  * Fires the torpedos of the ship
+  * Fires the torpedoes of the ship
   *
   * @param firingMode how many torpedo bays to fire
   * @return whether the fire command was successful
   */
-  public boolean fireTorpedos(FiringMode firingMode);
+  public boolean fireTorpedoes(FiringMode firingMode);
 }

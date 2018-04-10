@@ -1,7 +1,6 @@
 package hu.bme.mit.spaceship;
 
 import static org.junit.Assert.*;
-import static org.mockito.Mockito.*;
 
 import org.junit.Before;
 import org.junit.Test;
@@ -16,22 +15,22 @@ public class GT4500Test {
   }
 
   @Test
-  public void fireTorpedos_Single_Success(){
+  public void fireTorpedoes_Single_Success(){
     // Arrange
 
     // Act
-    boolean result = ship.fireTorpedos(FiringMode.SINGLE);
+    boolean result = ship.fireTorpedoes(FiringMode.SINGLE);
 
     // Assert
     assertEquals(true, result);
   }
 
   @Test
-  public void fireTorpedos_All_Success(){
+  public void fireTorpedoes_All_Success(){
     // Arrange
 
     // Act
-    boolean result = ship.fireTorpedos(FiringMode.ALL);
+    boolean result = ship.fireTorpedoes(FiringMode.ALL);
 
     // Assert
     assertEquals(true, result);

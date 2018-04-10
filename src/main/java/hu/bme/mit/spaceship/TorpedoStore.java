@@ -3,20 +3,20 @@ package hu.bme.mit.spaceship;
 import java.util.Random;
 
 /**
-* Class storing and managing the torpedos of a ship
+* Class storing and managing the torpedoes of a ship
 */
 public class TorpedoStore {
 
-  private int torpedos = 0;
+  private int torpedoes = 0;
   private Random generator = new Random();
 
-  public TorpedoStore(int numberOfTorpedos){
-    this.torpedos = numberOfTorpedos;
+  public TorpedoStore(int numberOfTorpedoes){
+    this.torpedoes = numberOfTorpedoes;
   }
 
-  public boolean fire(int numberOfTorpedos){
-    if(numberOfTorpedos < 1 || numberOfTorpedos > this.torpedos){
-      throw new IllegalArgumentException("numberOfTorpedos");
+  public boolean fire(int numberOfTorpedoes){
+    if(numberOfTorpedoes < 1 || numberOfTorpedoes > this.torpedoes){
+      throw new IllegalArgumentException("numberOfTorpedoes");
     }
 
     boolean success = false;
@@ -26,7 +26,7 @@ public class TorpedoStore {
 
     if (r > 0.01) {
       // successful firing
-      this.torpedos -= numberOfTorpedos;
+      this.torpedoes -= numberOfTorpedoes;
       success = true;
     } else {
       // failure
@@ -37,10 +37,10 @@ public class TorpedoStore {
   }
 
   public boolean isEmpty(){
-    return this.torpedos <= 0;
+    return this.torpedoes <= 0;
   }
 
   public int getNumberOfTorpedos() {
-    return this.torpedos;
+    return this.torpedoes;
   }
 }
