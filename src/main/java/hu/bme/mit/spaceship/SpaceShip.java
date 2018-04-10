@@ -7,12 +7,12 @@ package hu.bme.mit.spaceship;
 public interface SpaceShip {
 
   /**
-  * Fires the lasers of the ship
+  * Fires the laser or lasers of the ship
   *
   * @param firingMode how many lasers to fire
   * @return was the firing successful
   */
-  public boolean fireLasers(FiringMode firingMode);
+  public boolean fireLaser(FiringMode firingMode);
 
   /**
   * Fires the torpedos of the ship
