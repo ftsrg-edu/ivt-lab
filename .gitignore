@@ -13,3 +13,6 @@ hs_err_pid*
 
 # ignore target from Maven
 target/
+
+# IntelliJ folder
+.idea/
