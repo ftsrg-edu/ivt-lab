@@ -7,11 +7,23 @@ import java.util.Random;
 */
 public class TorpedoStore {
 
+  private double FAILURE_RATE = 0.0;
+
   private int torpedoCount = 0;
   private Random generator = new Random();
 
   public TorpedoStore(int numberOfTorpedos){
     this.torpedoCount = numberOfTorpedos;
+
+    // update failure rate if it was specified in an environment variable
+    String failureEnv = System.getenv("IVT_RATE");
+    if (failureEnv != null){
+      try {
+        FAILURE_RATE = Double.parseDouble(failureEnv);
+      } catch (NumberFormatException nfe) {
+        FAILURE_RATE = 0.0;
+      }
+    }
   }
 
   public boolean fire(int numberOfTorpedos){
@@ -21,15 +33,15 @@ public class TorpedoStore {
 
     boolean success = false;
 
-    //simulate random overheating of the launcher bay which prevents firing
+    // simulate random overheating of the launcher bay which prevents firing
     double r = generator.nextDouble();
 
-    if (r > 0.01) {
+    if (r >= FAILURE_RATE) {
       // successful firing
       this.torpedoCount -= numberOfTorpedos;
       success = true;
     } else {
-      // failure
+      // simulated failure
       success = false;
     }
 
