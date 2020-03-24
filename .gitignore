@@ -16,3 +16,9 @@ target/
 
 # IntelliJ folder
 .idea/
+
+# Visual Studio Code files
+*.classpath
+*.project
+.settings/
+.vscode/
